@@ -1,0 +1,22 @@
+{
+  "name": "mono-repo",
+  "version": "1.0.0",
+  "description": "A monorepo in TypeScript",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "backend",
+      "frontend",
+      "api"
+    ],
+    "nohoist": [
+      "**/backend/**",
+      "**/backend"
+    ]
+  },
+  "scripts": {
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "npm run start --workspace=frontend & npm run dev --workspace=backend",
+    "build-be": "tsc -b tsconfig.packages.json"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for monorepo",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node --experimental-json-modules lib/index.js",
+    "build": "tsc -p tsconfig-build.json"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@monorepo/api": "1.0.0",
+    "fastify": "^4.23.2",
+    "fastify-plugin": "^4.5.1",
+    "inversify": "^6.0.1",
+    "nodemon": "^3.0.1",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2"
+  }
+}

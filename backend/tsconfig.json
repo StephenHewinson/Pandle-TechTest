@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "strict": true,
+    "types": ["node"],
+    "typeRoots": ["../node_modules/@types"],
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "baseUrl": ".",
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*"],
+  "references": [{ "path": "../api"}]
+}

@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "typeRoots": ["node_modules/@types"],
+    "outDir": "lib",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": "."
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@monorepo/api",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  }  
+}

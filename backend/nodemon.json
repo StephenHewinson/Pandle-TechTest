@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext":"ts",
+  "ignore": ["src/**/*.test.ts"],
+  "exec": "tsc -b ../tsconfig.packages.json && NODE_OPTIONS=--experimental-json-modules npx ts-node src/index.ts"
+}
