@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { FastifyInstance } from "fastify";
-import { Route } from "./types";
+import { Route } from "./types.js";
 
 @injectable()
 export class HealthRoutes implements Route {
