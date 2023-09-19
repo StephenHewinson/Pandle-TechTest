@@ -3,7 +3,7 @@ import fastify from "fastify";
 import { describe, it } from 'vitest';
 import { JobService } from "../services/jobService";
 import { JobRoutes } from "./jobRoutes";
-import { Job } from "@monorepo/api";
+import { Job, JobWithCandidates } from "@monorepo/api";
 import { expect } from "vitest";
 
 const setup = async () => {
@@ -70,12 +70,19 @@ describe('Job Routes', () => {
   describe('get job', () => {
     it('should return a job if it exists', async () => {
       const { server, jobService} = await setup();
-      const stub: Job = {
+      const stub: JobWithCandidates = {
         id: 123,
         title: 'Software Engineer',
         company: 'My new company',
         location: 'Remote',
-        description: 'Lorem Ipsum'
+        description: 'Lorem Ipsum',
+        candidates: [{
+          id: 1,
+          name: 'Stephen Hewinson',
+          email: 'steehew@gmail.com',
+          phoneNumber: '123456',
+          applicationDate: new Date()
+        }]
       };
       jobService.getJob.mockResolvedValue(stub);
 
