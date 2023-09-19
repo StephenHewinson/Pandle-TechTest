@@ -1,5 +1,11 @@
 # Pandle-TechTest
 
+## Commands
+In the `backend` workspace, there is a `docker-compose.yml` file that can be used to run up a postgressql DB in docker.
+To seed the database, run the `npm run seed-db` command within the `backend` workspace.
+
+To start the app you can either run `npm run start` at the root, or `npm run dev` in `backend` to start the backend, and `npm run start` in the frontend to run the react app.
+
 ## Approach
 I started with a main focus on the backend. My experience is with RESTful API's and not GraphQL unfortunately. I quickly setup the repository, it's far from perfect, the linting and prettier doesn't work and the mono-repo structure isn't quite right (The backend should have it's own node_modules, and it shouldn't be there in the root).
 
