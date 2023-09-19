@@ -1,16 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Box } from "@mui/material";
+import { Home } from './home/home';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">       
+      <Box sx={{ padding: '20px'}}>       
         <Routes>
-          <Route path='/' element={<div>Home</div>}/>
+          <Route path='/' element={<Home />}/>
+          <Route path='/job/:id' element={<div>Job</div>}/>
         </Routes>
-      </div>
+      </Box>
     </BrowserRouter>
   );
 }
