@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { inject, injectable } from "inversify";
 import { FastifyInstance } from "fastify";
 import { GetJobRouteParams, GetJobsQueryString, GetJobsReply, Job } from "@monorepo/api";
@@ -9,12 +10,13 @@ import { JobService } from "../services/jobService.js";
 export class JobRoutes implements Route {
 
   constructor(@inject(TYPES.JobService) private jobService: JobService) {}
-
+  // TODO: Add validation and serialization
   async plugin(instance: FastifyInstance) {
     instance.get<{
       Reply: GetJobsReply,
       Querystring: GetJobsQueryString
-    }>('/jobs', async (req, res) => {
+    }>('/jobs',  async (req, res) => {
+     
       const { size, skip } = req.query;
 
       const results = await this.jobService.getJobs(size, skip);

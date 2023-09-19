@@ -2,7 +2,7 @@
 import { Job } from "@monorepo/api";
 import { PrismaClient } from "@prisma/client";
 import { inject, injectable } from "inversify";
-import { TYPES } from "src/types";
+import { TYPES } from "../types.js";
 
 @injectable()
 export class JobDAOPrisma implements JobDAO {

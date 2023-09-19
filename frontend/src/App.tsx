@@ -6,10 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />         
-        </header>
+      <div className="App">       
         <Routes>
           <Route path='/' element={<div>Home</div>}/>
         </Routes>

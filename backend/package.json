@@ -8,7 +8,8 @@
     "dev": "nodemon",
     "start": "node --experimental-json-modules lib/index.js",
     "build": "tsc -p tsconfig-build.json",
-    "seed-db": "npx prisma db seed"
+    "seed-db": "npx prisma db seed",
+    "test": "vitest"
   },
   "dependencies": {
     "@fastify/cors": "^8.3.0",
@@ -25,7 +26,9 @@
   "devDependencies": {
     "@types/luxon": "^3.3.2",
     "@types/node": "^20.6.2",
-    "prisma": "^5.3.1"
+    "prisma": "^5.3.1",
+    "vitest": "^0.34.4",
+    "vitest-mock-extended": "^1.2.1"
   },
   "prisma": {
     "seed": "ts-node src/utils/seed.ts"
