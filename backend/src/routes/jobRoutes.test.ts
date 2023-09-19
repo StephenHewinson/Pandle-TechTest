@@ -81,7 +81,7 @@ describe('Job Routes', () => {
           name: 'Stephen Hewinson',
           email: 'steehew@gmail.com',
           phoneNumber: '123456',
-          applicationDate: new Date()
+          applicationDate: new Date().toISOString()
         }]
       };
       jobService.getJob.mockResolvedValue(stub);

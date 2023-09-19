@@ -26,7 +26,16 @@ export class JobRoutes implements Route {
     instance.get<{
       Reply: Job | null
       Params: GetJobRouteParams
-    }>('/job/:jobId', async (req, res) => {
+    }>('/job/:jobId', { schema: {
+      params: {
+        $id: 'getJobRouteParamsSchema',
+        properties: {
+          jobId: {
+            type: 'number'
+          }
+        }
+      }
+    }}, async (req, res) => {
       const { jobId } = req.params;
       const job = await this.jobService.getJob(jobId);
 
@@ -34,6 +43,6 @@ export class JobRoutes implements Route {
         return res.send(job);
 
       return res.status(404);
-    })
+    });
   }
 }

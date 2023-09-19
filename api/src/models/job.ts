@@ -6,14 +6,14 @@ export type Job = {
   description: string;
 };
 
-export type Candidates = {
+export type Candidate = {
   id: number;
   name: string;
   email: string;
   phoneNumber: string;
-  applicationDate: Date;
+  applicationDate: string;
 }
 
 export type JobWithCandidates = Job & { 
-  candidates: Array<Candidates>
+  candidates: Array<Candidate>
 };
