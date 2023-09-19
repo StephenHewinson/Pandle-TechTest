@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node --experimental-json-modules lib/index.js",
-    "build": "tsc -p tsconfig-build.json"
+    "build": "tsc -p tsconfig-build.json",
+    "seed-db": "npx prisma db seed"
   },
   "dependencies": {
     "@fastify/cors": "^8.3.0",
@@ -16,12 +17,17 @@
     "fastify": "^4.23.2",
     "fastify-plugin": "^4.5.1",
     "inversify": "^6.0.1",
+    "luxon": "^3.4.3",
     "nodemon": "^3.0.1",
     "reflect-metadata": "^0.1.13",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@types/luxon": "^3.3.2",
     "@types/node": "^20.6.2",
     "prisma": "^5.3.1"
+  },
+  "prisma": {
+    "seed": "ts-node src/utils/seed.ts"
   }
 }
